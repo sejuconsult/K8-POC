@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: serviceb-service
+spec:
+  selector:
+    app: serviceb
+  ports:
+  - port: 80
+    targetPort: 8010
+  type: NodePort

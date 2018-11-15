@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicea-deployment
+  labels:
+    app: servicea
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: servicea
+  template:
+    metadata:
+      labels:
+        app: servicea
+    spec:
+      containers:
+      - env:
+        volumeMounts:
+        - name: application-config
+          mountPath: "/deployments/config"
+          readOnly: true
+      - name: servicea
+        image: servica:0.0.1-SNAPSHOT
+        ports:
+        - containerPort: 8888
+      volumes:
+      - name: application-config
+        configMap:
+          name: spring-app-config
+          items:
+          - key: application-k8.properties
+            path: application.properties

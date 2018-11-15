@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serviceb-deployment
+  labels:
+    app: serviceb
+    refresh: ossi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: serviceb
+      refresh: ossi
+  template:
+    metadata:
+      labels:
+        app: serviceb
+        refresh: ossi
+    spec:
+      containers:
+      - name: serviceb
+        image: servicb:0.0.10-SNAPSHOT
+        ports:
+        - containerPort: 8010
+      initContainers:
+      - name: init-myservice
+        image: busybox
+        command: ['sh', '-c', 'until nslookup configserver; do echo waiting for myservice; sleep 2; done;']

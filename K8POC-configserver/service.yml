@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: configserver
+spec:
+  selector:
+    app: configserver
+  ports:
+  - port: 80
+    targetPort: 8030
+  type: NodePort

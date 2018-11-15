@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gateway-ingress
+spec:
+  rules:
+  - host: tdc.k8poc
+    http:
+      paths:
+      - path: /servicea
+        backend:
+          serviceName: servicea-service
+          servicePort: 80
+      - path: /serviceb
+        backend:
+          serviceName: serviceb-service
+          servicePort: 80

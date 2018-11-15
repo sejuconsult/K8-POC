@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: servicea-service
+spec:
+  selector:
+    app: servicea
+  ports:
+  - port: 80
+    targetPort: 8010
+  type: NodePort
