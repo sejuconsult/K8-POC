@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
-@EnableFeignClients(clients = {ServiceAClient.class})
+@EnableFeignClients
 @EnableDiscoveryClient
 public class ServicebApplication {
 
