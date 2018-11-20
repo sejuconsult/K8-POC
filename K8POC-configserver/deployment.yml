@@ -5,7 +5,7 @@ metadata:
   labels:
     app: configserver
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: configserver
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: configserver
-        image: configserver:0.0.1-SNAPSHOT
+        image: configserver:0.0.2-SNAPSHOT
         ports:
         - containerPort: 8030

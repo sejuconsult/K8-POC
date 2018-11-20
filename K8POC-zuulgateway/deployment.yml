@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zuulgateway-deployment
+  labels:
+    app: zuulgateway
+    refresh: ossi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zuulgateway
+      refresh: ossi
+  template:
+    metadata:
+      labels:
+        app: zuulgateway
+        refresh: ossi
+    spec:
+      containers:
+      - name: serviceb
+        image: zuulgateway:0.0.1-SNAPSHOT
+        ports:
+        - containerPort: 8040

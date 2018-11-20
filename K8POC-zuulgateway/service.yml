@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: zuulgateway-service
+spec:
+  selector:
+    app: zuulgateway
+  ports:
+  - port: 80
+    targetPort: 8040
+  type: NodePort

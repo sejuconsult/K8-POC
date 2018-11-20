@@ -2,24 +2,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>dk.tdc.ossi.cloud</groupId>
-    <artifactId>ossi-cloud</artifactId>
-    <version>1.68-SYSOSSI-4576-SNAPSHOT</version>
+    <groupId>tdc.k8</groupId>
+    <artifactId>K8POC</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>ossi-cloud</name>
+    <name>K8-POC</name>
     <description>Cloud support for OSSI</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.4.RELEASE</version>
+        <version>2.0.4.RELEASE</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
     <modules>
-        <module>configserver</module>
-        <module>Servicea</module>
-        <module>Serviceb</module>
+        <module>K8POC-configserver</module>
+        <module>K8POC-servicea</module>
+        <module>K8POC-serviceb</module>
     </modules>
 </project>

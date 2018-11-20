@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service1
+spec:
+  selector:
+    name: servicea
+  clusterIP: None
+  ports:
+  - port: 80
+    targetPort: 8010
+    name: server
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicea1
+  labels:
+    name: servicea
+spec:
+  hostname: torben1
+  subdomain: amir
+  containers:
+  - image: servica:0.0.10-SNAPSHOT
+    name: servicea1
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicea2
+  labels:
+    name: servicea
+spec:
+  hostname: torben2
+  subdomain: amir
+  containers:
+  - image: servica:0.0.10-SNAPSHOT
+    name: servicea2

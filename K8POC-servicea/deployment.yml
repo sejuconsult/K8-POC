@@ -6,7 +6,7 @@ metadata:
     app: servicea
     refresh: ossi
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: servicea
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: servicea
-        image: servica:0.0.9-SNAPSHOT
+        image: servica:0.0.12-SNAPSHOT
         ports:
         - containerPort: 8010
       initContainers:

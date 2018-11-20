@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpSession;
-
 @RefreshScope
 @RestController
 @RequestMapping("/api/v1/servicea")
@@ -22,14 +20,14 @@ public class ServiceAController {
     @GetMapping("/")
     public TestDTO getTestData() {
 
-        return new TestDTO(testServiceAEnv +"  hostname : "+ System.getenv("HOSTNAME"));
+        return new TestDTO(testServiceAEnv + "  hostname : " + System.getenv("HOSTNAME"));
     }
 
 
     @GetMapping("/ossimanager")
     public TestDTO getOssiManager() {
 
-        return new TestDTO(ossiManagerName +"  hostname : "+ System.getenv("HOSTNAME"));
+        return new TestDTO(ossiManagerName + "  hostname : " + System.getenv("HOSTNAME"));
     }
 
 }

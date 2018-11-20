@@ -7,8 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient(name= "test", url = "http://localhost:8010")
+@FeignClient(name = "test", url = "http://localhost:8010")
 @Profile("local")
-public interface ServiceAClientLocal extends  ServiceAClient{
+public interface ServiceAClientLocal extends ServiceAClient {
 
 }
