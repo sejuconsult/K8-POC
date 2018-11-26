@@ -21,5 +21,6 @@
         <module>K8POC-configserver</module>
         <module>K8POC-servicea</module>
         <module>K8POC-serviceb</module>
+        <module>K8POC-api-gateway</module>
     </modules>
 </project>

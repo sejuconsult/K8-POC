@@ -19,6 +19,9 @@ spec:
     spec:
       containers:
       - name: serviceb
-        image: zuulgateway:0.0.1-SNAPSHOT
+        image: zuulgateway:0.0.8-SNAPSHOT
         ports:
         - containerPort: 8040
+          name: zuulport
+        - containerPort: 5005
+          name: debugport

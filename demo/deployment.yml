@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment
+  labels:
+    app: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      hostname: "demo-server"
+      containers:
+      - name: demo
+        env:
+        - name: eureka.instance.hostname
+          value: "demo-server"
+        - name: PORT
+          value: "80"
+        image: demo:0.0.1-SNAPSHOT
+        ports:
+        - containerPort: 80
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment2
+  labels:
+    app: demo2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo2
+  template:
+    metadata:
+      labels:
+        app: demo2
+    spec:
+      hostname: "demo-server2"
+      containers:
+      - name: ossi-eureka2
+        env:
+        - name: eureka.instance.hostname
+          value: "demo-server2"
+        - name: PORT
+          value: "80"
+        image: demo:0.0.1-SNAPSHOT
+        ports:
+        - containerPort: 80

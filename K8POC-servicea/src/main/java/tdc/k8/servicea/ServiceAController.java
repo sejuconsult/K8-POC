@@ -17,6 +17,12 @@ public class ServiceAController {
     @Value("${ossimanager}")
     private String ossiManagerName;
 
+    @Value("${PORTFROMAPP}")
+    private String port;
+
+    @Value("${eureka.instance.hostname.fromapp}")
+    private String eurekainstanceH;
+
     @GetMapping("/")
     public TestDTO getTestData() {
 
@@ -29,5 +35,11 @@ public class ServiceAController {
 
         return new TestDTO(ossiManagerName + "  hostname : " + System.getenv("HOSTNAME"));
     }
+
+    @GetMapping("/deployenv")
+    public TestDTO getdeployEnv() {
+        return new TestDTO(port +" "+eurekainstanceH);
+    }
+
 
 }

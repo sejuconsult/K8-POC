@@ -1,0 +1,23 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-server
+spec:
+  selector:
+    app: demo
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-server2
+spec:
+  selector:
+    app: demo2
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort

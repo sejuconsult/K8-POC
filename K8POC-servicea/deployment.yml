@@ -19,10 +19,11 @@ spec:
     spec:
       containers:
       - name: servicea
+        env:
+        - name: eureka.instance.hostname
+          value: "eureka-server"
+        - name: PORT
+          value: "80"
         image: servica:0.0.12-SNAPSHOT
         ports:
         - containerPort: 8010
-      initContainers:
-      - name: init-myservice
-        image: busybox
-        command: ['sh', '-c', 'until nslookup configserver; do echo waiting for myservice; sleep 2; done;']
