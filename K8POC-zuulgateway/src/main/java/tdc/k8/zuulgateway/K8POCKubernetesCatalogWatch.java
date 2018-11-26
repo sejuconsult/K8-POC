@@ -35,7 +35,7 @@ public class K8POCKubernetesCatalogWatch  implements ApplicationEventPublisherAw
     public void catalogServicesWatch() {
         try {
             List<String> previousState = catalogEndpointsState.get();
-
+// let try this
             //not all pods participate in the service discovery. only those that have endpoints.
             List<Endpoints> endpoints = kubernetesClient.endpoints().list().getItems();
             List<String> endpointsPodNames =
