@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway-deployment
+  labels:
+    app: api-gateway
+    refresh: ossi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+      refresh: ossi
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+        refresh: ossi
+    spec:
+      containers:
+      - name: api-gateway
+        image: api-gateway:0.0.1-SNAPSHOT
+        ports:
+        - containerPort: 8010

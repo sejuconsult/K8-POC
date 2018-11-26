@@ -1,11 +1,12 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka-server/eureka/, http://eureka-server2/eureka/
-  instance:
-    instanceId: ${spring.application.name}:${eureka.instance.hostname}:${server.port}
+      #defaultZone: http://eureka-server/eureka/, http://eureka-server2/eureka/
+      defaultZone: http://localhost:8761
+  #instance:
+   # instanceId: ${spring.application.name}:${eureka.instance.hostname}:${server.port}
 server:
-  port: ${PORT:8010}
+  port: ${PORT:8060}
 spring:
   application:
     name: demo

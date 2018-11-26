@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @RefreshScope
 @RestController
 @RequestMapping("/api/v1/servicea")
@@ -25,14 +28,16 @@ public class ServiceAController {
 
     @GetMapping("/")
     public TestDTO getTestData() {
-
+        System.out.println(System.getenv("HOSTNAME"));
+        System.out.println(" kalder /"+ new Date());
         return new TestDTO(testServiceAEnv + "  hostname : " + System.getenv("HOSTNAME"));
     }
 
 
     @GetMapping("/ossimanager")
     public TestDTO getOssiManager() {
-
+        System.out.println(System.getenv("HOSTNAME"));
+        System.out.println(" kalder ossimanager kl:"+ new Date());
         return new TestDTO(ossiManagerName + "  hostname : " + System.getenv("HOSTNAME"));
     }
 

@@ -1,11 +1,11 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: niklas
+  name: api-gateway
 spec:
   selector:
-    app: servicea
+    app: api-gateway
   ports:
   - port: 80
-    targetPort: 8010
+    targetPort: 8050
   type: NodePort

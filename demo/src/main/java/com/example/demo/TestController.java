@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController {
 
-    @Value("${eureka.instance.hostname}")
+   // @Value("${eureka.instance.hostname}")
     private String eurekainstanceH;
 
     @GetMapping("/")
